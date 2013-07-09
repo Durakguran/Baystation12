@@ -112,6 +112,10 @@
 	name = "Seraph wreckage"
 	icon_state = "seraph-broken"
 
+/obj/effect/decal/mecha_wreckage/olympus
+	name = "Olympus wreckage"
+	icon_state = "spartanblaze-broken"
+
 /obj/effect/decal/mecha_wreckage/ripley
 	name = "Ripley wreckage"
 	icon_state = "ripley-broken"
