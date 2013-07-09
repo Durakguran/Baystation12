@@ -86,9 +86,6 @@ proc/move_mining_shuttle()
 		for(var/mob/living/carbon/bug in toArea) // If someone somehow is still in the shuttle's docking area...
 			bug.gib()
 
-		for(var/mob/living/simple_animal/pest in toArea) // And for the other kind of bug...
-			pest.gib()
-
 		fromArea.move_contents_to(toArea)
 		if (mining_shuttle_location)
 			mining_shuttle_location = 0
