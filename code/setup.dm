@@ -398,9 +398,6 @@ var/MAX_EXPLOSION_RANGE = 14
 #define GAS_CO2	(1 << 3)
 #define GAS_N2O	(1 << 4)
 
-#define CC_PER_SHEET_METAL 3750
-#define CC_PER_SHEET_GLASS 3750
-#define CC_PER_SHEET_MISC 2000
 
 var/list/accessable_z_levels = list("1" = 5, "3" = 10, "4" = 15, "5" = 10, "6" = 60)
 //This list contains the z-level numbers which can be accessed via space travel and the percentile chances to get there.
@@ -543,8 +540,8 @@ var/list/liftable_structures = list(\
 var/list/TAGGERLOCATIONS = list("Disposals",
 	"Cargo Bay", "QM Office", "Engineering", "CE Office",
 	"Atmospherics", "Security", "HoS Office", "Medbay",
-	"CMO Office", "Robotics", "Chemistry", "Research", "RD Office",
-	"HoP Office", "Library", "Chapel", "Theatre",
+	"CMO Office", "Chemistry", "Research", "RD Office",
+	"Robotics", "HoP Office", "Library", "Chapel", "Theatre",
 	"Bar", "Kitchen", "Hydroponics", "Janitor Closet","Genetics")
 
 #define HOSTILE_STANCE_IDLE 1
@@ -689,10 +686,10 @@ var/list/be_special_flags = list(
 #define PULSE_FAST		3	//90-120 bpm
 #define PULSE_2FAST		4	//>120 bpm
 #define PULSE_THREADY	5	//occurs during hypovolemic shock
-
+//feel free to add shit to lists below
 var/list/tachycardics = list("coffee", "inaprovaline", "hyperzine", "nitroglycerin", "thirteenloko", "nicotine")	//increase heart rate
-var/list/bradycardics = list("neurotoxin", "cryoxadone", "clonexadone", "space_drugs", "stoxin")	//decrease heart rate
+var/list/bradycardics = list("neurotoxin", "cryoxadone", "clonexadone", "space_drugs", "stoxin")					//decrease heart rate
 
-//get_pulse methods
+//proc/get_pulse methods
 #define GETPULSE_HAND	0	//less accurate (hand)
 #define GETPULSE_TOOL	1	//more accurate (med scanner, sleeper, etc)

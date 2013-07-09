@@ -10,10 +10,10 @@ ALERT_RED_DOWNTO The self-destruct mechanism has been deactivated, there is stil
 ALERT_DELTA The station's self-destruct mechanism has been engaged. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.
 
 ## Add a # infront of this if you want to use the SQL based admin system, the legacy system uses admins.txt. You need to set up your database to use the SQL based system.
-#ADMIN_LEGACY_SYSTEM
+ADMIN_LEGACY_SYSTEM
 
 ## Add a # infront of this if you want to use the SQL based banning system. The legacy systems use the files in the data folder. You need to set up your database to use the SQL based system.
-#BAN_LEGACY_SYSTEM
+BAN_LEGACY_SYSTEM
 
 ## Add a # here if you wish to use the setup where jobs have more access. This is intended for servers with low populations - where there are not enough players to fill all roles, so players need to do more than just one job. Also for servers where they don't want people to hide in their own departments.
 JOBS_HAVE_MINIMAL_ACCESS
@@ -65,7 +65,7 @@ LOG_PDA
 ##LOG_ADMINWARN  ## Also duplicates a bunch of other messages.
 
 ## sql switching
-SQL_ENABLED
+# SQL_ENABLED
 
 ## disconnect players who did nothing during 10 minutes
 # KICK_INACTIVE
@@ -173,7 +173,7 @@ GUEST_BAN
 
 ## Remove the # to show a popup 'reply to' window to every non-admin that recieves an adminPM. 
 ## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
-POPUP_ADMIN_PM
+#POPUP_ADMIN_PM
 
 ## Remove the # to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
 ALLOW_HOLIDAYS
@@ -193,14 +193,14 @@ SOCKET_TALK 0
 #AUTOMUTE_ON
 
 ## How long the delay is before the Away Mission gate opens. Default is half an hour.
-GATEWAY_DELAY 600
+GATEWAY_DELAY 18000
 
 ## Remove the # to give assistants maint access.
-ASSISTANT_MAINT
+#ASSISTANT_MAINT
 
 ## Remove the # to make rounds which end instantly (Rev, Wizard, Malf) to continue until the shuttle is called or the station is nuked.
 ## Malf and Rev will let the shuttle be called when the antags/protags are dead.
-CONTINUOUS_ROUNDS
+#CONTINUOUS_ROUNDS
 
 ## Uncomment to restrict non-admins from using humanoid alien races
 USEALIENWHITELIST
@@ -212,8 +212,6 @@ NUDGE_SCRIPT_PATH nudge.py
 ALIEN_PLAYER_RATIO 0.2
 
 ##Remove the # to let ghosts spin chairs
-#GHOST_INTERACTION
-
 ## Uncomment this to enable external .rsc downloads. URLs must be separated by no more than one space.
 ## The linked .zip file should contain the required .rsc
 #resource_urls http://firstserver.org/myresource.zip http://secondserver.org/myresource.zip  http://10.22.11.1/myresource.zip

@@ -2,7 +2,7 @@
 // see code/datums/recipe.dm
 
 
- //No telebacon. just no...
+/* No telebacon. just no...
 /datum/recipe/telebacon
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/meat,
@@ -10,13 +10,14 @@
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/telebacon
 
-//I said no!
+I said no!
 /datum/recipe/syntitelebacon
 	items = list(
 		/obj/item/weapon/syntiflesh,
 		/obj/item/device/assembly/signaler
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/telebacon
+*/
 
 /datum/recipe/friedegg
 	reagents = list("sodiumchloride" = 1, "blackpepper" = 1)
@@ -93,8 +94,8 @@
 
 /*
 /datum/recipe/monkeyburger
-	reagents = list("flour" = 5)
 	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/flour,
 		/obj/item/weapon/reagent_containers/food/snacks/meat/monkey
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/monkeyburger
@@ -121,14 +122,14 @@
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/brainburger
 
-// NO FUN ALLOWED
+/* NO FUN ALLOWED
 /datum/recipe/roburger
-	reagents = list("flour" = 5)
 	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/flour,
 		/obj/item/robot_parts/head
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/roburger
-
+*/
 
 /datum/recipe/xenoburger
 	reagents = list("flour" = 5)
@@ -377,8 +378,9 @@
 /*
 /datum/recipe/berrypie
 	reagents = list("berryjuice" = 5)
-	reagents = list("flour" = 5)
 	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/flour,
+		/obj/item/weapon/reagent_containers/food/snacks/flour,
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/berrypie
 */

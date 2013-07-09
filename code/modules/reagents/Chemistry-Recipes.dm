@@ -112,12 +112,12 @@ datum
 			required_reagents = list("ethanol" = 1, "tramadol" = 1, "plasma" = 1)
 			result_amount = 1
 
-		cyanide
-			name = "Cyanide"
-			id = "cyanide"
-			result = "cyanide"
-			required_reagents = list("hydrogen" = 1, "carbon" = 1, "nitrogen" = 1)
-			result_amount = 1
+		//cyanide
+		//	name = "Cyanide"
+		//	id = "cyanide"
+		//	result = "cyanide"
+		//	required_reagents = list("hydrogen" = 1, "carbon" = 1, "nitrogen" = 1)
+		//	result_amount = 1
 
 		thermite
 			name = "Thermite"
@@ -525,13 +525,6 @@ datum
 				id = "mixvirus2"
 				required_reagents = list("mutagen" = 5)
 				level = 4
-
-			mix_virus_3
-
-				name = "Mix Virus 3"
-				id = "mixvirus3"
-				required_reagents = list("plasma" = 5)
-				level = 6
 
 			rem_virus
 
@@ -1413,13 +1406,6 @@ datum
 			id = "goldschlager"
 			result = "goldschlager"
 			required_reagents = list("vodka" = 10, "gold" = 1)
-			result_amount = 10
-
-		holywater //They didn't have this in... odd... Also decided to have radium instead of mercury ~Durakguran
-			name = "Holy Water"
-			id = "holywater"
-			result = "holywater"
-			required_reagents = list("wine" = 5, "water" = 5, "radium" = 1)
 			result_amount = 10
 
 		patron
