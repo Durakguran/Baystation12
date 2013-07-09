@@ -291,6 +291,14 @@
 /proc/ismuton(var/block,var/mob/M)
 	return isblockon(getblock(M.dna.struc_enzymes, block,3),block)
 
+/proc/togglemut(mob/M as mob, var/block)
+		if(!M)  return
+		var/newdna
+		M.dna.check_integrity()
+		newdna = setblock(M.dna.struc_enzymes,block,toggledblock(getblock(M.dna.struc_enzymes,block,3)),3)
+		M.dna.struc_enzymes = newdna
+		return
+
 /proc/randmutb(mob/M as mob)
 	if(!M)	return
 	var/num
@@ -422,6 +430,7 @@
 		if(probinj(45,inj) || (mRemote in old_mutations))
 			M << "\blue Your mind expands"
 			M.mutations.Add(mRemote)
+			M.verbs += /mob/living/carbon/human/proc/remoteobserve
 	if(ismuton(REGENERATEBLOCK,M))
 		if(probinj(45,inj) || (mRegen in old_mutations))
 			M << "\blue You feel strange"
@@ -434,10 +443,12 @@
 		if(probinj(45,inj) || (mRemotetalk in old_mutations))
 			M << "\blue You expand your mind outwards"
 			M.mutations.Add(mRemotetalk)
+			M.verbs += /mob/living/carbon/human/proc/remotesay
 	if(ismuton(MORPHBLOCK,M))
 		if(probinj(45,inj) || (mMorph in old_mutations))
 			M.mutations.Add(mMorph)
 			M << "\blue Your skin feels strange"
+			M.verbs += /mob/living/carbon/human/proc/morph
 	if(ismuton(BLENDBLOCK,M))
 		if(probinj(45,inj) || (mBlend in old_mutations))
 			M.mutations.Add(mBlend)
