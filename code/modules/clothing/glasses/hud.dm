@@ -46,9 +46,7 @@
 		if(!M.client)	return
 		var/client/C = M.client
 		var/image/holder
-		for(var/mob/living/carbon/human/patient in view(get_turf(M)))
-			if(M.see_invisible < patient.invisibility)
-				continue
+		for(var/mob/living/carbon/human/patient in view(M))
 			var/foundVirus = 0
 			for(var/datum/disease/D in patient.viruses)
 				if(!D.hidden[SCANNER])
@@ -94,9 +92,7 @@
 	if(!M.client)	return
 	var/client/C = M.client
 	var/image/holder
-	for(var/mob/living/carbon/human/perp in view(get_turf(M)))
-		if(M.see_invisible < perp.invisibility)
-			continue
+	for(var/mob/living/carbon/human/perp in view(M))
 		if(!C) continue
 		var/perpname = perp.name
 		holder = perp.hud_list[ID_HUD]

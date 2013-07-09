@@ -86,7 +86,7 @@
 	item_state = "syndie_helm"
 	color = "syndi"
 	armor = list(melee = 60, bullet = 50, laser = 30,energy = 15, bomb = 35, bio = 100, rad = 60)
-	siemens_coefficient = 0.6
+	siemens_coefficient = 0
 
 
 /obj/item/clothing/suit/space/rig/syndi
@@ -98,7 +98,7 @@
 	w_class = 3
 	armor = list(melee = 60, bullet = 50, laser = 30, energy = 15, bomb = 35, bio = 100, rad = 60)
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs)
-	siemens_coefficient = 0.6
+	siemens_coefficient = 0
 
 
 //Wizard Rig
@@ -110,7 +110,7 @@
 	color = "wiz"
 	unacidable = 1 //No longer shall our kind be foiled by lone chemists with spray bottles!
 	armor = list(melee = 40, bullet = 20, laser = 20,energy = 20, bomb = 35, bio = 100, rad = 60)
-	siemens_coefficient = 0.7
+	siemens_coefficient = 0
 
 /obj/item/clothing/suit/space/rig/wizard
 	icon_state = "rig-wiz"
@@ -121,7 +121,7 @@
 	w_class = 3
 	unacidable = 1
 	armor = list(melee = 40, bullet = 20, laser = 20,energy = 20, bomb = 35, bio = 100, rad = 60)
-	siemens_coefficient = 0.7
+	siemens_coefficient = 0
 
 
 //Medical Rig
@@ -148,7 +148,7 @@
 	item_state = "sec_helm"
 	color = "sec"
 	armor = list(melee = 60, bullet = 10, laser = 30, energy = 5, bomb = 45, bio = 100, rad = 10)
-	siemens_coefficient = 0.7
+	siemens_coefficient = 0
 
 /obj/item/clothing/suit/space/rig/security
 	icon_state = "rig-sec"
@@ -157,12 +157,12 @@
 	item_state = "sec_hardsuit"
 	armor = list(melee = 60, bullet = 10, laser = 30, energy = 5, bomb = 45, bio = 100, rad = 10)
 	allowed = list(/obj/item/weapon/gun,/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/melee/baton)
-	siemens_coefficient = 0.7
+	siemens_coefficient = 0
 
 
 //Atmospherics Rig (BS12)
 /obj/item/clothing/head/helmet/space/rig/atmos
-	desc = "A special helmet designed for work in a hazardou, low pressure environments. Has reduced radiation shielding and protective plating to allow for greater mobility."
+	desc = "A special helmet designed for work in a hazardous, low pressure environments. Has reduced radiation shielding and protective plating to allow for greater mobility."
 	name = "atmospherics hardsuit helmet"
 	icon_state = "rig0-atmos"
 	item_state = "atmos_helm"
@@ -177,3 +177,42 @@
 	item_state = "atmos_hardsuit"
 	armor = list(melee = 40, bullet = 0, laser = 0, energy = 0, bomb = 25, bio = 100, rad = 0)
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECITON_TEMPERATURE
+
+//Gateway Rig (Durakguran)
+/obj/item/clothing/head/helmet/space/rig/gateway
+	desc = "A special helmet designed for work in a hazardous, low pressure environments. Has been outfitted in order to protect the wearer from what ever could be on the other side."
+	name = "Quantum Hardsuit Helmet"
+	icon_state = "cryo0-sci"
+	item_state = "sci_helm"
+	color = "sci"
+	armor = list(melee = 40, bullet = 25, laser = 25, energy = 25, bomb = 25, bio = 100, rad = 40)
+	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECITON_TEMPERATURE
+
+/obj/item/clothing/suit/space/rig/gateway
+	desc = "A special suit designed for work in a hazardous, low pressure environments. Has been outfitted in order to protect the wearer from what ever could be on the other side."
+	icon_state = "cryo-sci"
+	name = "quantum hardsuit"
+	item_state = "sci_hardsuit"
+	armor = list(melee = 40, bullet = 25, laser = 25, energy = 25, bomb = 25, bio = 100, rad = 40)
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECITON_TEMPERATURE
+
+//Deathsquad Rig (Durakguran)
+/obj/item/clothing/head/helmet/space/rig/deathsquad
+	desc = "Rumored to be of Nanotrasen design, it is an advanced helmet created for work in special operations."
+	name = "Deathsquad Helmet"
+	icon_state = "rig0-deathsquad"
+	item_state = "deathsquad_helm"
+	color = "deathsquad"
+	armor = list(melee = 60, bullet = 50, laser = 30,energy = 25, bomb = 35, bio = 100, rad = 60)
+	siemens_coefficient = 0
+
+/obj/item/clothing/suit/space/rig/deathsquad
+	icon_state = "rig-deathsquad"
+	name = "blood-red hardsuit"
+	desc = "Rumored to be of Nanotrasen design, it is an advanced suit that protects against injuries during special operations."
+	item_state = "deathsquad_hardsuit"
+	slowdown = 1
+	w_class = 3
+	armor = list(melee = 60, bullet = 50, laser = 30, energy = 25, bomb = 35, bio = 100, rad = 60)
+	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs)
+	siemens_coefficient = 0

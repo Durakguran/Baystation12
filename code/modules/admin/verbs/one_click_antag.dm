@@ -462,8 +462,7 @@ client/proc/one_click_antag()
 			candidates.Remove(G)
 
 	if(candidates.len)
-		var/max_raiders = 6
-		var/raiders = max_raiders
+		var/raiders = 4
 		//Spawns vox raiders and equips them.
 		for (var/obj/effect/landmark/L in world)
 			if(L.name == "Response Team")
@@ -485,17 +484,18 @@ client/proc/one_click_antag()
 				new_vox << "\red Don't forget to turn on your nitrogen internals!"
 
 				raiders--
-			if(raiders > max_raiders)
+			if(raiders > 4)
 				return 0
 	else
 		return 0
 	return 1
 
 /datum/admins/proc/create_vox_raider(obj/spawn_location, leader_chosen = 0)
-
 	var/mob/living/carbon/human/new_vox = new(spawn_location.loc)
 
 	new_vox.gender = pick(MALE, FEMALE)
+	var/datum/preferences/A = new() //Randomize appearance for the raider.
+	A.randomize_appearance_for(new_vox)
 	new_vox.h_style = "Short Vox Quills"
 	new_vox.regenerate_icons()
 
