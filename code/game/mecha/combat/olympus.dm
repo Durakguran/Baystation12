@@ -1,8 +1,8 @@
 /obj/mecha/combat/olympus
 	desc = "Heavy-duty, combat exosuit, developed after the first AI crisis. Rarely found among civilian populations."
 	name = "Olympus"
-	icon_state = "sparta"
-	initial_icon = "sparta"
+	icon_state = "spartanblaze"
+	initial_icon = "spartanblaze"
 	step_in = 5
 	health = 500
 	deflect_chance = 25

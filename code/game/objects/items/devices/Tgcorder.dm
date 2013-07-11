@@ -3,24 +3,44 @@
 	desc = "A device that can record to cassette tapes, and play them. It automatically translates the content in playback."
 	icon_state = "taperecorder_empty"
 	item_state = "analyzer"
-	w_class = 2
-	slot_flags = SLOT_BELT
+	w_class = 1.0
 	m_amt = 60
 	g_amt = 30
 	flags = FPRINT | TABLEPASS | CONDUCT
-	force = 2
 	throwforce = 2
+	throw_speed = 4
+	throw_range = 20
+	var/emagged = 0.0
 	var/recording = 0
 	var/playing = 0
 	var/playsleepseconds = 0
 	var/obj/item/device/tape/mytape
-	var/open_panel = 0
-	var/datum/wires/taperecorder/wires = null
 	var/canprint = 1
 
 
+/obj/item/device/taperecorder/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	..()
+	if(istype(W, /obj/item/weapon/card/emag))
+		if(emagged == 0)
+			emagged = 1
+			recording = 0
+			user << "<span class='warning'>PZZTTPFFFT</span>"
+			icon_state = "taperecorderidle"
+		else
+			user << "<span class='warning'>It is already emagged!</span>"
+
+/obj/item/device/taperecorder/proc/explode()
+	var/turf/T = get_turf(loc)
+	if(ismob(loc))
+		var/mob/M = loc
+		M << "<span class='danger'>\The [src] explodes!</span>"
+	if(T)
+		T.hotspot_expose(700,125)
+		explosion(T, -1, -1, 0, 4)
+	del(src)
+	return
+
 /obj/item/device/taperecorder/New()
-	wires = new(src)
 	mytape = new /obj/item/device/tape/random(src)
 	update_icon()
 
@@ -28,7 +48,6 @@
 /obj/item/device/taperecorder/examine()
 	set src in view(1)
 	..()
-	usr << "The wire panel is [open_panel ? "opened" : "closed"]."
 
 
 /obj/item/device/taperecorder/attackby(obj/item/I, mob/user)
@@ -38,13 +57,6 @@
 		mytape = I
 		user << "<span class='notice'>You insert [I] into [src].</span>"
 		update_icon()
-	else if(istype(I, /obj/item/weapon/screwdriver))
-		open_panel = !open_panel
-		user << "<span class='notice'>You [open_panel ? "open" : "close"] the wire panel.</span>"
-		if(open_panel)
-			wires.Interact(user)
-	else if(istype(I, /obj/item/weapon/wirecutters) || istype(I, /obj/item/device/multitool) || istype(I, /obj/item/device/assembly/signaler))
-		wires.Interact(user)
 
 
 /obj/item/device/taperecorder/proc/eject(mob/user)
@@ -121,8 +133,6 @@
 		return
 	if(playing)
 		return
-	if(!wires.get_record())
-		return
 
 	if(mytape.used_capacity < mytape.max_capacity)
 		usr << "<span class='notice'>Recording started.</span>"
@@ -134,8 +144,6 @@
 		var/max = mytape.max_capacity
 		for(used, used < max)
 			if(recording == 0)
-				break
-			if(!wires.get_record())
 				break
 			mytape.used_capacity++
 			used++
@@ -178,8 +186,6 @@
 		return
 	if(playing)
 		return
-	if(!wires.get_play())
-		return
 
 	playing = 1
 	update_icon()
@@ -188,8 +194,6 @@
 	var/max = mytape.max_capacity
 	for(var/i = 1, used < max, sleep(10 * playsleepseconds))
 		if(!mytape)
-			break
-		if(!wires.get_play())
 			break
 		if(playing == 0)
 			break
@@ -237,6 +241,15 @@
 		return
 	if(recording || playing)
 		return
+	if(emagged == 1)
+		usr << "\red The tape recorder makes a scratchy noise."
+		return
+	if(!canprint)
+		usr << "<span class='notice'>The recorder can't print that fast!</span>"
+		return
+	if(recording == 1 || playing == 1)
+		usr << "<span class='notice'>You can't print the transcript while playing or recording!</span>"
+		return
 
 	usr << "<span class='notice'>Transcript printed.</span>"
 	var/obj/item/weapon/paper/P = new /obj/item/weapon/paper(get_turf(src))
@@ -253,7 +266,6 @@
 
 //empty tape recorders
 /obj/item/device/taperecorder/empty/New()
-	wires = new(src)
 	return
 
 
