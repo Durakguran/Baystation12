@@ -169,7 +169,12 @@
 				new /obj/effect/decal/cleanable/oil(get_turf(src))
 				toner = 0
 		return
+/*
+ * Toner cartridge
+ */
 
 /obj/item/device/toner
 	name = "toner cartridge"
 	icon_state = "tonercartridge"
+	var/charges = 5
+	var/max_charges = 5
