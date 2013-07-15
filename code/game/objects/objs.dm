@@ -16,6 +16,10 @@
 	var/damtype = "brute"
 	var/force = 0
 
+	var/fire_min_burn_temp = null
+	var/fire_burn_multiplier = null
+	var/fire_fuel_worth = null
+
 /obj/recycle(var/obj/machinery/mineral/processing_unit/recycle/rec)
 	if (src.m_amt == 0 && src.g_amt == 0)
 		return 0
