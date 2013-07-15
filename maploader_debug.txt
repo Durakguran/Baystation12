@@ -8,3 +8,5 @@ Starting Map Load @ (0, 0, 7), 100 tiles per second.
 	Failure /obj/effect/step_trigger/trap/fake @ (220, 230, 7)  fields:
 	Failure /obj/effect/landmark/loot_spawn/low @ (45, 226, 7)  fields:
 	Failure /obj/effect/landmark/glowshroom_spawn @ (45, 210, 7)  fields:
+Starting Map Load @ (0, 0, 7), 100 tiles per second.
+	Building turf array.
