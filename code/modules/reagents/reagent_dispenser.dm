@@ -82,7 +82,7 @@
 		..()
 		reagents.add_reagent("water",1000)
 
-/obj/structure/reagent_dispensers/watertank/fire_burn()
+/obj/structure/reagent_dispensers/watertank/proc/fire_burn()
 	src.reagents.update_total()
 	var/number_of_gusts = src.reagents.total_volume / 50
 	for(var/a=0, a < number_of_gusts , a++)
@@ -192,7 +192,7 @@
 		if(src)
 			del(src)
 
-/obj/structure/reagent_dispensers/fueltank/fire_burn()
+/obj/structure/reagent_dispensers/fueltank/proc/fire_burn()
 	src.reagents.update_total()
 	new/obj/effect/decal/cleanable/liquid_fuel(src.loc, src.reagents.total_volume)
 	..()

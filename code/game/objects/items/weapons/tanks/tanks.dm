@@ -268,7 +268,7 @@
 	else if(integrity < 3)
 		integrity++
 
-/obj/item/weapon/tank/fire_burn()
+/obj/item/weapon/tank/proc/fire_burn()
 	//get location and check if it is in a proper ZAS zone
 	var/turf/simulated/floor/S = loc
 	if(S.zone)

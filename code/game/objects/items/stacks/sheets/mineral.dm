@@ -117,7 +117,7 @@ var/global/list/datum/stack_recipe/plasma_recipes = list ( \
 	pixel_y = rand(0,4)-4
 	..()
 
-/obj/item/stack/sheet/mineral/plasma/fire_burn()
+/obj/item/stack/sheet/mineral/plasma/proc/fire_burn()
 	//get location and check if it is in a proper ZAS zone
 	var/turf/simulated/floor/S = loc
 	if(S.zone)

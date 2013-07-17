@@ -134,7 +134,7 @@ obj
 					var/obj_burn_random = max( min(o.fire_burn_multiplier * 5 * ( ( max(air_contents.temperature - o.fire_min_burn_temp,0) / o.fire_min_burn_temp )^2 ), 100), 0)
 					if(prob(obj_burn_random))
 						scorch.amount += fire_fuel_worth
-						o.fire_burn()
+					//	o.fire_burn()
 
 			//since the air is processed in fractions, we need to make sure not to have any minuscle residue or
 			//the amount of moles might get to low for some functions to catch them and thus result in wonky behaviour
